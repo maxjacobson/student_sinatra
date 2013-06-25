@@ -3,7 +3,7 @@ set :repository,  "https://github.com/sarahduve/student_sinatra.git"
 
 set :user, 'serasyl'
 set :deploy_to, "/home/#{ user }/#{ application }"
-set :use_sudo. false
+set :use_sudo, false
 
 set :scm, :git
 
