@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit student <%= @student.name %></title>
+  <style>
+    body {
+      margin: 25px auto;
+      width: 50%;
+    }
+    input {
+      display: block;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Edit student info</h1>
+  <form action="/students/edit/process" method="POST">
+    <% @student.class.attributes.keys.each do |attr| %>
+      <label for="<%= attr %>"><%= attr.to_s.capitalize.gsub(/_/, ' ').gsub("url", "URL") %>:</label>
+      <input type="text" name="<%= attr %>" value="<%= @student.send(attr.to_sym) %>" <%= "readonly" if attr == :id %>>
+    <% end %>
+    <input type="submit" value="Submit edits" />
+
+  </form>
+  <a href="/students/<%= @student.id %>">Cancel</a>
+</body>
+</html>

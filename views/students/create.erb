@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create student</title>
+  <style>
+    body {
+      margin: 25px auto;
+      width: 50%;
+    }
+    input {
+      display: block;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create student</h1>
+  <form action="/students/create/process" method="POST">
+    <% Student.attributes.keys.reject{|k| k == :id}.each do |attr| %>
+      <label for="<%= attr %>"><%= attr.to_s.capitalize.gsub(/_/, ' ').gsub("url", "URL") %>:</label>
+      <input type="text" name="<%= attr %>" />
+    <% end %>
+    <input type="submit" value="Submit new student" />
+
+  </form>
+  <a href="/students">Cancel</a>
+</body>
+</html>
