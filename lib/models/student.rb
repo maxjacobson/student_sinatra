@@ -27,7 +27,7 @@ class Student
   def self.find_by(*args)
     args.flatten.each do |arg|
       define_singleton_method("find_by_#{arg}") do |value|
-        result = self.database.execute "SELECT * FROM student WHERE #{arg} = ?", value
+        result = self.database.execute "SELECT * FROM students WHERE #{arg} = ?", value
         new_from_db(result.first)
       end
     end
@@ -40,7 +40,7 @@ class Student
   end
 
   def self.all
-    results = database.execute "SELECT * FROM student;"
+    results = database.execute "SELECT * FROM students;"
     results.collect{|row| new_from_db(row)}
   end
 

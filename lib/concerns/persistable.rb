@@ -4,7 +4,7 @@ module Persistable
     def new_from_db(row)
       new.tap do |s|
         attributes.keys.each_with_index do |attribute, index|
-          s.send("#{attribute}=",row[index])
+          s.send("#{attribute}=",row[index]) # this line is being called but why? by wat?
         end
       end
     end
