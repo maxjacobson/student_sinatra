@@ -7,7 +7,7 @@ set :user, "max"
 set :deploy_to, "/home/#{user}/#{application}"
 set :user_sudo, false
 
-deploy_run_options[:pty] = true
+default_run_options[:pty] = true
 
 role :web, "192.241.131.74"                          # Your HTTP server, Apache/etc
 role :app, "192.241.131.74"                          # This may be the same as your `Web` server
