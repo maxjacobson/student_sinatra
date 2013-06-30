@@ -16,6 +16,7 @@
   <script type='text/javascript' src="js/comment-reply.min.js"></script>
   <script type='text/javascript' src="js/jquery.js"></script>
   <script type='text/javascript' src="js/chirp.min.js"></script>
+  <script type='text/javascript' src="/js/app.js"></script>
   <style type="text/css">a{color:#60BDDB}</style>
 </head>
   <body>
@@ -81,6 +82,12 @@
         <h2>Every Story Has Heroes</h2>
         <h3>We're <%= Student.all.size %> people on a journey to learn to love code.</h3>
         <a href="/students/create">Create student</a>
+        <!-- SEARCH -->
+        <div id="search">
+          <label>search: </label>
+          <input id="find_student_query" type="text">
+        </div><!-- #search -->
+
       </div>
       <!-- End Title Content -->
 
@@ -130,6 +137,6 @@
   <% end %> 
 </ul> -->
 
-
+  
   </body>
 </html>
