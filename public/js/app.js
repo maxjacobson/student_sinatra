@@ -2,7 +2,7 @@
 // some conflict maybe
 jQuery(function($) {
 
-  var student_query, student_name, student_query_pattern;
+  var student_query, student_name, student_query_pattern, $student_box;
 
   $("#find_student_query").on("keyup", function(){
 
