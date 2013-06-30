@@ -11,9 +11,9 @@ default_run_options[:pty] = true
 
 role :web, "192.241.131.74"                          # Your HTTP server, Apache/etc
 role :app, "192.241.131.74"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
-
+# role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
+# role :db,  "your slave db-server here"
+# 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
