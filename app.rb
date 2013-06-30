@@ -8,6 +8,9 @@ require_relative './lib/concerns/persistable'
 # Why is it a good idea to wrap our App class in a module?
 module StudentSite
   class App < Sinatra::Base
+    def self.omg
+      "omg"
+    end
     get '/' do
       redirect '/students'
     end
